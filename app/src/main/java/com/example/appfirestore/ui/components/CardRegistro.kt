@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.appfirestore.model.Pessoa
 
+//Definindo o estrutura do card de cada registro
 @Composable
 fun CardRegistro(pessoa: Pessoa) {
     Card(modifier = Modifier
@@ -60,6 +61,7 @@ fun CardRegistro(pessoa: Pessoa) {
             modifier = Modifier.padding(14.dp, 6.dp)
         )
 
+        //Definindo botões para editar e excluir
         Row(modifier = Modifier.padding(14.dp, 6.dp, 0.dp, 12.dp)) {
 
             Button(
@@ -72,6 +74,7 @@ fun CardRegistro(pessoa: Pessoa) {
                     modifier = Modifier.size(25.dp)
                 )
             }
+
             Spacer(modifier = Modifier.size(12.dp))
 
             Button(

@@ -18,20 +18,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-//TELA PARA DEFINIR O LAYOUT DA TELA DE CADASTRO (TEMPORARIA)
-
-@Composable
-fun Template() {
-    Column() {
-        //Campos do formulário
-        Campos()
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Campos() {
-
+fun TemplateCadastro() {
     val nome = remember { mutableStateOf("") }
     val endereco = remember { mutableStateOf("") }
     val bairro = remember { mutableStateOf("") }
@@ -113,6 +103,6 @@ fun Campos() {
 
 @Preview(showSystemUi = true)
 @Composable
-fun CamposPreview() {
-    Campos()
+fun TemplateCadastroPreview() {
+    TemplateCadastro()
 }

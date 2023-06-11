@@ -13,39 +13,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.appfirestore.model.BottomBarItem
+import com.example.appfirestore.model.bottomBarItems
 import com.example.appfirestore.ui.theme.AppFirestoreTheme
 
-//TELA PARA DEFINIR O BARRA DE MENU INFERIOR
-
-//Objeto e atributos dos botões do menu
-class BottomBarItem(
-    val label: String,
-    val icon: ImageVector,
-    val route: String,
-)
-
-//Lista de botões do menu
-val bottomBarItems = listOf(
-    BottomBarItem(
-        label = "Cadastrar",
-        icon = Icons.Filled.Create,
-        route = "cadastro"
-    ),
-    BottomBarItem(
-        label = "Consultar",
-        icon = Icons.Filled.Menu,
-        route = "consulta"
-    ),
-)
-
+//Definindo a barra do menu inferior
 @Composable
 fun BottomBar(
     item: BottomBarItem,
-    modifier: Modifier = Modifier,
     items: List<BottomBarItem> = emptyList(),
     onItemChange: (BottomBarItem) -> Unit = {}
 ) {
-    NavigationBar(modifier) {
+    NavigationBar() {
         items.forEach {
             val label = it.label
             val icon = it.icon
@@ -53,13 +32,12 @@ fun BottomBar(
                 icon = { Icon(icon, contentDescription = label) },
                 label = { Text(label) },
                 selected = item.label == label,
-                onClick = {
-                    onItemChange(it)
-                }
+                onClick = { onItemChange(it) }
             )
         }
     }
 }
+
 
 @Preview
 @Composable

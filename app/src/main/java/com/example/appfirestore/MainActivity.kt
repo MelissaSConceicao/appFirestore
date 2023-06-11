@@ -28,26 +28,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.appfirestore.model.BottomBarItem
 import com.example.appfirestore.model.Pessoa
+import com.example.appfirestore.model.bottomBarItems
+import com.example.appfirestore.model.listaRegistros
 import com.example.appfirestore.ui.components.BottomBar
-import com.example.appfirestore.ui.components.BottomBarItem
-import com.example.appfirestore.ui.components.bottomBarItems
 import com.example.appfirestore.ui.screens.CadastrarScreen
 import com.example.appfirestore.ui.screens.ConsultarScreen
-import com.example.appfirestore.ui.screens.ConsultarTesteScreen
-import com.example.appfirestore.ui.screens.listaRegistros
 import com.example.appfirestore.ui.theme.AppFirestoreTheme
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-
-//TELA PRINCIPAL, ONDE VAI O NAVIGATION E O CONTROLE DAS TELAS
-
-/*
-O que fazer:
-Criar um objeto Pessoa que tenha todos os atributos do registro
-Criar um modelo do card de registro que será criado a cada registro
-*/
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,7 +71,7 @@ class MainActivity : ComponentActivity() {
                             navController = navController,
                             startDestination = "cadastro"){
                             composable("cadastro"){ CadastrarScreen() }
-                            composable("consulta"){ ConsultarTesteScreen(listaRegistros) }
+                            composable("consulta"){ ConsultarScreen(listaRegistros) }
                         }
                     }
                 }
